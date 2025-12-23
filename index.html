@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>DARKVENOM SNI CHECKER — ADMIN</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="header">
+<h1>DARKVENOM SNI CHECKER</h1>
+<small>Admin Control Panel</small>
+</header>
+
+<main class="wrap">
+
+<section id="loginBox" class="card center">
+<h2>Admin Login</h2>
+<input id="username" placeholder="Username">
+<input id="password" type="password" placeholder="Password">
+<button onclick="login()">Login</button>
+<div id="loginMsg" class="msg"></div>
+</section>
+
+<section id="maintenanceBox" class="card hidden">
+<h2>🚧 APK UNDER MAINTENANCE MODE</h2>
+</section>
+
+<section id="dashboard" class="hidden grid">
+
+<div class="card">
+<h3>App Control</h3>
+Status: <b id="appStatus"></b><br><br>
+<button onclick="toggleApp()">Toggle Maintenance</button>
+</div>
+
+<div class="card">
+<h3>Create Member</h3>
+<input id="memberName" placeholder="Username">
+<button onclick="addMember()">Create User</button>
+<div id="keyOutput" class="key-box hidden"></div>
+</div>
+
+<!-- OWNER ONLY -->
+<div class="card" id="earningsCard">
+<h3>Monthly Earnings</h3>
+<label>Website ($)</label>
+<input id="siteEarning" type="number" readonly>
+<label>APK ($)</label>
+<input id="apkEarning" type="number" readonly>
+<hr>
+<b>Total:</b> $<span id="totalEarning">0</span>
+</div>
+
+<!-- ADS -->
+<div class="card" id="adCard">
+<h3>Sponsored</h3>
+<div id="adSlot"></div>
+</div>
+
+<div class="card wide">
+<h3>Members</h3>
+<table>
+<thead>
+<tr>
+<th>User</th>
+<th>Status</th>
+<th>Key</th>
+<th>Actions</th>
+<th>Extend</th>
+</tr>
+</thead>
+<tbody id="membersTable"></tbody>
+</table>
+</div>
+
+</section>
+</main>
+
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
