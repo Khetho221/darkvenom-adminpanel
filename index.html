@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>DARKVENOM SNI CHECKER – ADMIN</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header class="top-bar">
+  <div class="brand">
+    <span class="logo">🛡️</span>
+    <span class="title">DARKVENOM SNI CHECKER</span>
+  </div>
+  <div class="subtitle">Admin Control Panel</div>
+</header>
+
+<main class="container">
+
+  <!-- LOGIN -->
+  <section class="card login-card" id="loginBox">
+    <h1>Admin Login</h1>
+    <p class="hint">Authorized access only</p>
+
+    <div class="form-group">
+      <label>Username</label>
+      <input id="username" placeholder="Enter username" />
+    </div>
+
+    <div class="form-group">
+      <label>Password</label>
+      <input id="password" type="password" placeholder="Enter password" />
+    </div>
+
+    <button class="primary-btn" onclick="login()">Login</button>
+    <div class="msg" id="loginMsg"></div>
+  </section>
+
+  <!-- MAINTENANCE -->
+  <section class="card maintenance hidden" id="maintenanceBox">
+    <h1>APK UPDATE UNDER PROGRESS</h1>
+    <p>
+      PLEASE COME BACK FOR NEW UPDATED EXPERIENCE<br><br>
+      FOR MORE INFO DM<br>
+      <b>t.me/D_A_R_K_V_E_N_O_M</b>
+    </p>
+  </section>
+
+  <!-- DASHBOARD -->
+  <section id="dashboard" class="hidden">
+
+    <div class="card">
+      <h2>Application Control</h2>
+      Status:
+      <span id="appStatus"></span><br><br>
+      <button onclick="toggleApp()">Toggle App</button>
+    </div>
+
+    <div class="card">
+      <h2>NFT Summary</h2>
+      <div id="nftSummary">Loading…</div>
+    </div>
+
+    <div class="card">
+      <h2>Members</h2>
+
+      <div class="member-form">
+        <input id="memberName" placeholder="Member username" />
+        <input id="memberDays" placeholder="Days (e.g. 30)" />
+        <button onclick="addMember()">Add / Extend</button>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>User</th>
+            <th>Expires</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="membersTable"></tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <h2>Admins</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>User</th>
+            <th>Role</th>
+          </tr>
+        </thead>
+        <tbody id="adminTable"></tbody>
+      </table>
+    </div>
+
+  </section>
+
+</main>
+
+<script type="module" src="js/app.js"></script>
+</body>
+                                        </html>
